@@ -56,7 +56,7 @@ assemblyMergeStrategy in assembly := {
     else oldStrategy(x)
 }
 
-assemblyExcludedJars in assembly := {
-  val cp = (fullClasspath in assembly).value
-  cp filter {_.data.getName == "avro-ipc-1.7.7-tests.jar"}
-}
+//assemblyExcludedJars in assembly := {
+//  val cp = (fullClasspath in assembly).value
+//  cp filter {_.data.getName == "avro-ipc-1.7.7-tests.jar"}
+//}

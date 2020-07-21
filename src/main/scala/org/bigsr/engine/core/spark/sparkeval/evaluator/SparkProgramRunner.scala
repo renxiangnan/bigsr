@@ -5,7 +5,6 @@ import java.security.InvalidParameterException
 import org.apache.spark.sql.SparkSession
 import org.bigsr.engine.core.spark.common.SparkEDBMap
 import org.bigsr.engine.core.spark.sparkeval.conf.SparkSingleton
-import org.bigsr.fwk.common.Utils
 import org.bigsr.fwk.program.Program
 import org.bigsr.fwk.program.compiler.Runner
 
@@ -49,10 +48,10 @@ class SparkProgramRunner(program: Program)
       do {
         // Trigger local checkpoint, truncate RDD lineage
         if (iter <= SparkSingleton.checkpointThreshold) {
-          plan(i).grounding(db(i), false: Boolean);
+          plan(i).grounding(db(i), false: Boolean)
           iter += 1
         } else {
-          plan(i).grounding(db(i), true: Boolean);
+          plan(i).grounding(db(i), true: Boolean)
           iter = 0
         }
       } while (!db(i).emptyDelta)

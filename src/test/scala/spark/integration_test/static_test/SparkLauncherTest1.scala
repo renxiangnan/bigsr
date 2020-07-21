@@ -20,6 +20,7 @@ object SparkLauncherTest1 extends SharedSparkContext {
 
   def main(args: Array[String]): Unit = {
     val edgeRDD = spark.sparkContext.parallelize(edge).cache()
+
     edgeRDD.count()
     val oddRDD = spark.sparkContext.parallelize(odd).cache
     oddRDD.count()

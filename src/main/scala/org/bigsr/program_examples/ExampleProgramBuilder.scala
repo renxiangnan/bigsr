@@ -35,7 +35,7 @@ object ExampleProgramBuilder {
     //------------------------------ Non Recursive ------------------------------
     //------------------------------ Waves Program ------------------------------
     case "NR_Waves_1" =>
-      val atom_tp1 = Atom("<http://purl.oclc.org/NET/ssnx/ssn/hasValue>", Term("S"), Term("O"))
+      val atom_tp1 = Atom(addPref(ssnPref, "hasValue"), Term("S"), Term("O"))
       val atom_res = Atom(resIRI, Term("S"))
 
       val rule1 = Rule(atom_res, Set(atom_tp1), f_win(range, slide))

@@ -28,7 +28,6 @@ package object common {
       }
 
       val left = taskA
-
       (left, right.join())
     }
   }
